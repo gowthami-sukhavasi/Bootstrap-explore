@@ -1,0 +1,33 @@
+// $btn-padding-y:5rem;
+
+
+$grid-breakpoints: (
+  mobile: 360px,       
+  tablet: 600px,      
+  laptop: 1024px,      
+//   desktop: 1240px     
+);
+
+// Custom Container Widths
+$container-max-widths: (
+  mobile: 100%,  
+  tablet: 100%,  
+  laptop: 100%, 
+//   desktop: 1200px // Fixed width for large screens
+);
+
+// Custom Gutter Widths
+$grid-gutter-width: 24px; // Default gutter for larger screens
+$grid-gutter-widths: (
+  mobile: 16px,  
+  tablet: 24px,   
+  laptop: 24px,  
+//   desktop: 24px   // Gutter for larger screens
+);
+
+// Custom Margin for different breakpoints
+$custom-margins: (
+  mobile: 16px,
+  tablet: 24px,
+  laptop: 44px
+);

@@ -1,0 +1,107 @@
+
+
+
+
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+
+// moved from above the functions, variables
+ @import "./abstracts/variables";
+
+
+@import "~bootstrap/scss/bootstrap";
+@import "node_modules/bootstrap/scss/grid";
+@import "node_modules/bootstrap/scss/utilities";
+
+
+.container-custom {
+    // Mobile: 360px – 599px (Columns: 4)
+    @include media-breakpoint-up(mobile) {
+        margin-left: map-get($custom-margins, mobile);
+        margin-right: map-get($custom-margins, mobile);
+        max-width: calc(100% - #{map-get($custom-margins, mobile) * 2});
+        
+      
+      .row {
+        display: flex;
+      flex-wrap: wrap;
+      margin-left: -#{map-get($grid-gutter-widths, mobile) / 2};
+      margin-right: -#{map-get($grid-gutter-widths, mobile) / 2};
+      }
+  
+      .col {
+        padding-left: #{map-get($grid-gutter-widths, mobile) / 2};
+        padding-right: #{map-get($grid-gutter-widths, mobile) / 2};
+        flex: 0 0 25%; // 4 columns, 25% each
+        max-width: 25%;
+       
+    }
+      
+    }
+      // Tablet: 600px – 1023px (Columns: 6)
+      @include media-breakpoint-up(tablet) {
+        margin-left: map-get($custom-margins, tablet);
+        margin-right: map-get($custom-margins, tablet);
+        max-width: calc(100% - #{map-get($custom-margins, tablet) * 2});
+          
+        .row {
+          display: flex;
+          flex-wrap: wrap;
+          margin-left: -#{map-get($grid-gutter-widths, tablet) / 2};
+          margin-right: -#{map-get($grid-gutter-widths, tablet) / 2};
+        }
+    
+        .col {
+          padding-left: #{map-get($grid-gutter-widths, tablet) / 2};
+          padding-right: #{map-get($grid-gutter-widths, tablet) / 2};
+          flex: 0 0 16.666666%; // 6 columns, each 1/6 of the row (16.66667%)
+          max-width: 16.666666%;
+        }
+      }
+    
+
+  // Laptop: 1024px – 1239px (Columns: 12)
+  @include media-breakpoint-up(laptop) {
+    margin-left: map-get($custom-margins, laptop);
+    margin-right: map-get($custom-margins, laptop);
+    max-width: calc(100% - #{map-get($custom-margins, laptop) * 2});
+ 
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      margin-left: -#{map-get($grid-gutter-widths, laptop) / 2};
+      margin-right: -#{map-get($grid-gutter-widths, laptop) / 2};
+    }
+
+    .col {
+      padding-left: #{map-get($grid-gutter-widths, laptop) / 2};
+      padding-right: #{map-get($grid-gutter-widths, laptop) / 2};
+      flex: 0 0 8.333333%; // 12 columns, each 1/12 of the row (8.33333%)
+      max-width: 8.333333%;
+    }
+  }
+
+}
+  
+
+// @each $breakpoint, $gutterwidth in $custom-gutter-widths {
+//     $container-padding-x: $gutterwidth*.5;
+//     $grid-gutter-width: $gutterwidth;
+//     @include media-breakpoint-up($breakpoint, $grid-breakpoints) {
+//         .container,
+//         .container-fluid {
+//             @include make-container();
+//         }
+        
+//         .row {
+//             @include make-row();
+            
+//             > * {
+//               @include make-col-ready();
+//             }
+//         }
+//         @include make-grid-columns();
+        
+//     }
+// }
